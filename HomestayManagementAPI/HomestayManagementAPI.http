@@ -1,0 +1,6 @@
+@HomestayManagementAPI_HostAddress = http://localhost:5004
+
+GET {{HomestayManagementAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

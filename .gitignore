@@ -1,0 +1,62 @@
+# ASP.NET Core API .gitignore
+
+# Thư mục và file build output
+bin/
+obj/
+
+# User-specific files
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ASP.NET specific
+appsettings.Development.json
+appsettings.Production.json
+appsettings.Staging.json
+appsettings.Local.json
+
+# Entity Framework Migrations
+Migrations/
+
+# Logs, database, and temp files
+logs/
+*.log
+*.nlog
+*.sqlite
+*.db-shm
+*.db-wal
+
+# Publish output
+publish/
+
+# NuGet Packages
+*.nupkg
+*.snupkg
+packages/
+
+# Visual Studio files
+*.vs/
+
+# Rider IDE files
+.idea/
+*.sln.iml
+
+# Docker files
+**/docker-compose.override.yml
+
+# Node.js dependencies (nếu có dùng frontend trong API)
+node_modules/
+
+# Các file tạm thời
+*.bak
+*.tmp
+*.swp
+*.swo
+
+# Certs (nếu có sử dụng HTTPS development)
+*.pfx
+*.crt
+*.key
