@@ -4,6 +4,8 @@ using HomestayManagementAPI.Repositories;
 using Microsoft.EntityFrameworkCore;
 using HomestayManagementAPI.Services;
 using HomestayManagementAPI.Services.Interfaces;
+using HomestayManagementAPI.Repositories.Intefaces;
+using HomestayManagementAPI.Services.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +24,8 @@ builder.Services.AddScoped<ICategoryArticleRepository, CategoryArticleRepository
 builder.Services.AddScoped<ICategoryArticleService, CategoryArticleService>();
 builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
 builder.Services.AddScoped<IArticleService, ArticleService>();
-
+builder.Services.AddScoped<IRoleRepository, RoleRepository>();
+builder.Services.AddScoped<IRoleService, RoleService>();
 
 var app = builder.Build();
 
