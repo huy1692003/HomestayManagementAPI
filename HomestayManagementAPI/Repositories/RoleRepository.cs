@@ -19,24 +19,25 @@ namespace HomestayManagementAPI.Repositories
 
         public async Task<IEnumerable<Role>> GetAllRole()
         {
+            // Bước 1: Lấy dữ liệu cơ bản từ database
             var roles = await _context.Roles
                 .Select(role => new Role
                 {
                     RoleID = role.RoleID,
                     NameRole = role.NameRole,
                     Permission = role.Permission,
-                    listMenus =
-                         new List<int>()
+                    listMenus = new List<int>()
                 })
                 .ToListAsync();
 
-            foreach (var role in roles)
+            // Bước 2: Xử lý listMenus sau khi đã lấy dữ liệu về
+            return roles.Select(role =>
             {
                 role.listMenus = string.IsNullOrEmpty(role.Permission)
-                    ? new List<int>() // Nếu Permission là null hoặc rỗng, tạo list rỗng
-                    : JsonSerializer.Deserialize<List<int>>(role.Permission); // Chuyển chuỗi JSON thành List<int>
-            }
-            return roles;
+                    ? new List<int>()
+                    : JsonSerializer.Deserialize<List<int>>(role.Permission);
+                return role;
+            });
         }
 
         public async Task<Role?> GetRoleById(string roleId)
