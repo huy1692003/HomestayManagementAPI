@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
-namespace API_HomeStay_HUB.Model
+namespace HomestayManagementAPI.Model
 {
     [Table("Users")]
     public class User

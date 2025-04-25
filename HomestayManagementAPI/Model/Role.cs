@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-namespace API_HomeStay_HUB.Model
+namespace HomestayManagementAPI.Model
 {
     [Table("Roles")]
     public class Role

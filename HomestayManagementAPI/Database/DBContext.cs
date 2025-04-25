@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using API_HomeStay_HUB.Model; // Đảm bảo bạn đã import model Administrator
+using HomestayManagementAPI.Model; // Đảm bảo bạn đã import model Administrator
 
-namespace API_HomeStay_HUB.Data
+namespace HomestayManagementAPI.Data
 {
     public class DBContext : DbContext
     {

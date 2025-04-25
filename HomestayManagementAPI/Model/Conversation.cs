@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace API_HomeStay_HUB.Model
+namespace HomestayManagementAPI.Model
 {
     [Table("Conversations")]
     public class Conversation

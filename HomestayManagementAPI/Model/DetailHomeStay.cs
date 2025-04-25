@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace API_HomeStay_HUB.Model
+namespace HomestayManagementAPI.Model
 {
     [Table("DetailHomeStays")]
     public class DetailHomeStay

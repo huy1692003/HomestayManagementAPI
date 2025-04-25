@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace API_HomeStay_HUB.Model
+namespace HomestayManagementAPI.Model
 {
     [Table("PartnershipReg")] // Tên bảng trong cơ sở dữ liệu
     public class PartnershipReg

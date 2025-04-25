@@ -1,4 +1,4 @@
-﻿namespace API_HomeStay_HUB.Model.Momo
+﻿namespace HomestayManagementAPI.Model.Momo
 {
     public class MomoOptionModel
     {
