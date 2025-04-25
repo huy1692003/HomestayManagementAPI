@@ -17,15 +17,23 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DBContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// Add DI cho các repository và service
 builder.Services.AddScoped<ICategoryArticleRepository, CategoryArticleRepository>();
 builder.Services.AddScoped<ICategoryArticleService, CategoryArticleService>();
+builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
+builder.Services.AddScoped<IArticleService, ArticleService>();
+
 
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "HomestayManagementAPI v1");
+        c.RoutePrefix = string.Empty; // Ð?t Swagger UI làm trang m?c ð?nh
+    });
 }
 
 app.UseHttpsRedirection();
