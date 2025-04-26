@@ -26,6 +26,8 @@ builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
 builder.Services.AddScoped<IArticleService, ArticleService>();
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped<IRoleService, RoleService>();
+builder.Services.AddScoped<IAmenitiesRepository, AmenitiesRepository>();
+builder.Services.AddScoped<IAmenitiesService, AmenitiesService>();
 
 var app = builder.Build();
 
