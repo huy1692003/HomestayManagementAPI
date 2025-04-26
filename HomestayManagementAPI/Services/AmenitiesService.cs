@@ -1,6 +1,6 @@
 ﻿using HomestayManagementAPI.Model;
 using HomestayManagementAPI.Repositories.Interfaces;
-using HomestayManagementAPI.Services.Interface;
+using HomestayManagementAPI.Services.Interfaces;
 
 namespace HomestayManagementAPI.Services
 {

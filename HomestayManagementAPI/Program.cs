@@ -6,6 +6,10 @@ using HomestayManagementAPI.Services;
 using HomestayManagementAPI.Services.Interfaces;
 using HomestayManagementAPI.Repositories.Intefaces;
 using HomestayManagementAPI.Services.Interface;
+using HomestayManagementAPI.Repositories.Interfaces;
+using HomestayManagementAPI.Repositories;
+using HomestayManagementAPI.Services.Interface;
+using HomestayManagementAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +32,8 @@ builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped<IRoleService, RoleService>();
 builder.Services.AddScoped<IAmenitiesRepository, AmenitiesRepository>();
 builder.Services.AddScoped<IAmenitiesService, AmenitiesService>();
+builder.Services.AddScoped<IFAQRepository, FAQRepository>();
+builder.Services.AddScoped<IFAQService, FAQService>();
 
 var app = builder.Build();
 

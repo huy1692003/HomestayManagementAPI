@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using HomestayManagementAPI.Model;
-using HomestayManagementAPI.Services.Interface;
+using HomestayManagementAPI.Services.Interfaces;
 using HomestayManagementAPI.Helpers;
 
 namespace HomestayManagementAPI.Controllers
