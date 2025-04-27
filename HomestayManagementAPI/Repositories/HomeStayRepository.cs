@@ -111,12 +111,17 @@ namespace HomestayManagementAPI.Repositories
                         .Take(paginate.PageSize)
                         .ToListAsync();
 
-            // Trả về dữ liệu cùng với tổng số bản ghi
-            return new PagedResultDTO<HomeStayResDTO?>
+            if (data.Count > 0)
             {
-                Items = data,
-                TotalCount = totalRecords
-            };
+
+                return new PagedResultDTO<HomeStayResDTO?>
+                {
+                    Items = data,
+                    TotalCount = totalRecords
+                };
+            }
+            return null;
+            // Trả về dữ liệu cùng với tổng số bản ghi
         }
 
 
@@ -178,12 +183,12 @@ namespace HomestayManagementAPI.Repositories
                                                select amen).ToList()
                               }).FirstOrDefaultAsync();
             var owner = await _dBContext.OwnerStays.FirstOrDefaultAsync(s => s.OwnerID == data.HomeStay.OwnerID);
-            if(owner != null)
+            if (owner != null)
             {
-                var user =await _dBContext.Users.FirstOrDefaultAsync(s => s.UserID == owner.UserID);
+                var user = await _dBContext.Users.FirstOrDefaultAsync(s => s.UserID == owner.UserID);
                 data.idUserOwner = user.UserID;
                 data.UserNameOwner = user.Username;
-            }    
+            }
 
             return data;
         }
